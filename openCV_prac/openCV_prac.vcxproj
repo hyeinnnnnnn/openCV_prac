@@ -70,6 +70,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>D:\03_Study_Prg\openCV_LIB\build\install\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>D:\03_Study_Prg\openCV_LIB\build\install\x64\vc18\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExternalIncludePath>D:\03_Study_Prg\openCV_LIB\build\install\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>D:\03_Study_Prg\openCV_LIB\build\install\x64\vc18\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -117,7 +125,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OPENCV_ROOT)\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core4150d.lib;opencv_imgproc4150d.lib;opencv_imgcodecs4150d.lib;opencv_highgui4150d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_aruco4150d.lib;opencv_bgsegm4150d.lib;opencv_bioinspired4150d.lib;opencv_calib3d4150d.lib;opencv_ccalib4150d.lib;opencv_core4150d.lib;opencv_datasets4150d.lib;opencv_dnn4150d.lib;opencv_dnn_objdetect4150d.lib;opencv_dnn_superres4150d.lib;opencv_dpm4150d.lib;opencv_face4150d.lib;opencv_features2d4150d.lib;opencv_flann4150d.lib;opencv_fuzzy4150d.lib;opencv_gapi4150d.lib;opencv_hfs4150d.lib;opencv_highgui4150d.lib;opencv_img_hash4150d.lib;opencv_imgcodecs4150d.lib;opencv_imgproc4150d.lib;opencv_intensity_transform4150d.lib;opencv_line_descriptor4150d.lib;opencv_mcc4150d.lib;opencv_ml4150d.lib;opencv_objdetect4150d.lib;opencv_optflow4150d.lib;opencv_phase_unwrapping4150d.lib;opencv_photo4150d.lib;opencv_plot4150d.lib;opencv_quality4150d.lib;opencv_rapid4150d.lib;opencv_reg4150d.lib;opencv_rgbd4150d.lib;opencv_saliency4150d.lib;opencv_shape4150d.lib;opencv_signal4150d.lib;opencv_stereo4150d.lib;opencv_stitching4150d.lib;opencv_structured_light4150d.lib;opencv_superres4150d.lib;opencv_surface_matching4150d.lib;opencv_text4150d.lib;opencv_tracking4150d.lib;opencv_video4150d.lib;opencv_videoio4150d.lib;opencv_videostab4150d.lib;opencv_wechat_qrcode4150d.lib;opencv_xfeatures2d4150d.lib;opencv_ximgproc4150d.lib;opencv_xobjdetect4150d.lib;opencv_xphoto4150d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /Y /D "$(OPENCV_ROOT)\bin\Debug\*.dll" "$(OutDir)"</Command>
@@ -141,7 +149,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OPENCV_ROOT)\install\x64\vc18\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core4150.lib;opencv_imgproc4150.lib;opencv_imgcodecs4150.lib;opencv_highgui4150.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_aruco4150.lib;opencv_bgsegm4150.lib;opencv_bioinspired4150.lib;opencv_calib3d4150.lib;opencv_ccalib4150.lib;opencv_core4150.lib;opencv_datasets4150.lib;opencv_dnn4150.lib;opencv_dnn_objdetect4150.lib;opencv_dnn_superres4150.lib;opencv_dpm4150.lib;opencv_face4150.lib;opencv_features2d4150.lib;opencv_flann4150.lib;opencv_fuzzy4150.lib;opencv_gapi4150.lib;opencv_hfs4150.lib;opencv_highgui4150.lib;opencv_img_hash4150.lib;opencv_imgcodecs4150.lib;opencv_imgproc4150.lib;opencv_intensity_transform4150.lib;opencv_line_descriptor4150.lib;opencv_mcc4150.lib;opencv_ml4150.lib;opencv_objdetect4150.lib;opencv_optflow4150.lib;opencv_phase_unwrapping4150.lib;opencv_photo4150.lib;opencv_plot4150.lib;opencv_quality4150.lib;opencv_rapid4150.lib;opencv_reg4150.lib;opencv_rgbd4150.lib;opencv_saliency4150.lib;opencv_shape4150.lib;opencv_signal4150.lib;opencv_stereo4150.lib;opencv_stitching4150.lib;opencv_structured_light4150.lib;opencv_superres4150.lib;opencv_surface_matching4150.lib;opencv_text4150.lib;opencv_tracking4150.lib;opencv_video4150.lib;opencv_videoio4150.lib;opencv_videostab4150.lib;opencv_wechat_qrcode4150.lib;opencv_xfeatures2d4150.lib;opencv_ximgproc4150.lib;opencv_xobjdetect4150.lib;opencv_xphoto4150.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /Y /D "$(OPENCV_ROOT)\install\x64\vc18\bin\*.dll" "$(OutDir)"</Command>
@@ -151,7 +159,16 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="display_image.cpp" />
+    <ClCompile Include="cam.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="display_image.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="L01_Mat.cpp" />
+    <ClCompile Include="Source.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
