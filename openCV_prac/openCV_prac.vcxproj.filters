@@ -30,5 +30,8 @@
     <ClCompile Include="ch12_Mat_Basic_Operation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Image_Basic_Processing.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
