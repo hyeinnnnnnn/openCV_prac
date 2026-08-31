@@ -3,7 +3,7 @@
 using namespace std;
 using namespace cv;
 
-int main()
+int Image_Basic_Processing()
 {
 	namedWindow("img", 0);
 	namedWindow("img2", 0);
@@ -14,7 +14,7 @@ int main()
 	// sobel : 소벨필터를 사용하여 Gradient값을 구하는 방법
 	//Sobel(img, img2, img2.depth(), 1, 0);
 
-	// flip
+	// flip : 가로로 대칭시킴
 	flip(img, img2, 1);
 
 	imshow("img", img); // show

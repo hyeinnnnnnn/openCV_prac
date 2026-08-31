@@ -33,5 +33,14 @@
     <ClCompile Include="Image_Basic_Processing.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Video_Reading.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Image_Reading.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mat_Basic_function.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
