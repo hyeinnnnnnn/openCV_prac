@@ -24,7 +24,10 @@
     <ClCompile Include="cam.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="L01_Mat.cpp">
+    <ClCompile Include="ch11_Mat_Class.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ch12_Mat_Basic_Operation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
