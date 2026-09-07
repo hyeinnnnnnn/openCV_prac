@@ -14,7 +14,7 @@ int Image_Basic_Processing()
 	// sobel : 소벨필터를 사용하여 Gradient값을 구하는 방법
 	//Sobel(img, img2, img2.depth(), 1, 0);
 
-	// flip : 가로로 대칭시킴
+	// flip : 세로 기준으로 대칭시킴 [이미지]|[이미지 좌우반전]
 	flip(img, img2, 1);
 
 	imshow("img", img); // show
