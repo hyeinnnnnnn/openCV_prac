@@ -33,6 +33,9 @@
     <ClCompile Include="pixel_data.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Mat_and_Image_Video_Write.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="openCV_prac.h">

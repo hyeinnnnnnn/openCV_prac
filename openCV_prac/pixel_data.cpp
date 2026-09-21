@@ -82,6 +82,18 @@ int pixel_data(string imagePath)
 		}
 	}
 
+	// using iteration
+	cv::MatIterator_< cv::Vec3b> itd = img.begin<cv::Vec3b>(), itd_end = img.end<cv::Vec3b>();
+	
+	for (int i = 0; itd != itd_end; ++itd, ++i)
+	{
+		cv::Vec3b bgr = (*itd);
+
+		(*itd)[0] = 255 - bgr[0];
+		(*itd)[1] = 255 - bgr[1];
+		(*itd)[2] = 255 - bgr[2];
+	}
+	
 	imshow("img", img);
 	waitKey(0);
 
